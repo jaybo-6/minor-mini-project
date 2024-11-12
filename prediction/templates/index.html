@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement and Salary Prediction</title>
+    <style>
+        /* Style the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        /* Style the form */
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        /* Style the form labels */
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 14px;
+        }
+
+        /* Style the input fields */
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Adding space between form elements */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Add some margin to the title */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Optional: Make the form responsive */
+        @media (max-width: 768px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Details for Placement and Salary Prediction</h1>
+    <form action="/predict" method="POST">
+        <div class="form-group">
+            <label for="cgpa">CGPA:</label>
+            <input type="text" id="cgpa" name="cgpa" required pattern="^[0-9]*\.?[0-9]+$" title="CGPA should be a valid number (e.g. 7.5)">
+        </div>
+        
+        <div class="form-group">
+            <label for="major_projects">Major Projects:</label>
+            <input type="text" id="major_projects" name="major_projects" required pattern="^[0-9]+$" title="Only numeric values are allowed">
+        </div>
+        
+        <div class="form-group">
+            <label for="workshops">Workshops/Certifications:</label>
+            <input type="text" id="workshops" name="workshops" required pattern="^[0-9]+$" title="Only numeric values are allowed">
+        </div>
+        
+        <div class="form-group">
+            <label for="mini_projects">Mini Projects:</label>
+            <input type="text" id="mini_projects" name="mini_projects" required pattern="^[0-9]+$" title="Only numeric values are allowed">
+        </div>
+
+        <div class="form-group">
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" required pattern="^[0-9]+$" title="Only numeric values are allowed">
+        </div>
+
+        <div class="form-group">
+            <label for="comm_skill">Communication Skill Rating:</label>
+            <input type="text" id="comm_skill" name="comm_skill" required pattern="^[0-9]*\.?[0-9]+$" title="Rating should be a valid number between 0 and 10">
+        </div>
+
+        <div class="form-group">
+            <label for="internship">Internship (1 for Yes, 0 for No):</label>
+            <input type="text" id="internship" name="internship" required pattern="^[01]$" title="Please enter 1 for Yes and 0 for No">
+        </div>
+
+        <div class="form-group">
+            <label for="hackathon">Hackathon (1 for Yes, 0 for No):</label>
+            <input type="text" id="hackathon" name="hackathon" required pattern="^[01]$" title="Please enter 1 for Yes and 0 for No">
+        </div>
+
+        <div class="form-group">
+            <label for="tenth_percentage">10th Percentage:</label>
+            <input type="text" id="tenth_percentage" name="tenth_percentage" required pattern="^[0-9]+$" title="Enter a valid percentage (0-100)">
+        </div>
+
+        <div class="form-group">
+            <label for="twelfth_percentage">12th Percentage:</label>
+            <input type="text" id="twelfth_percentage" name="twelfth_percentage" required pattern="^[0-9]+$" title="Enter a valid percentage (0-100)">
+        </div>
+
+        <div class="form-group">
+            <label for="backlogs">Backlogs:</label>
+            <input type="text" id="backlogs" name="backlogs" required pattern="^[0-9]+$" title="Only numeric values are allowed">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Predict">
+        </div>
+    </form>
+</body>
+</html>

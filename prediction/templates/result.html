@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .result {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .caution {
+            color: #ff6347; /* Tomato red */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .encouragement {
+            color: #4CAF50; /* Green */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .neutral {
+            color: #000;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result">
+        <p>Placement Status: <span class="{{ 'encouragement' if placement_status == 'Placed' else 'neutral' }}">{{ placement_status }}</span></p>
+        <p>Predicted Salary: ₹{{ salary }}</p>
+        
+        <!-- Cautionary Message -->
+        <p class="caution">Please note: These predictions are based on statistical models and are not 100% guaranteed. Many factors can influence the final outcome.</p>
+
+        <!-- Encouraging Message -->
+        {% if placement_status == 'Placed' %}
+        <p class="encouragement">Congratulations! You're likely on your way to a great career! Keep up the good work and continue improving your skills!</p>
+        {% else %}
+        <p class="neutral">Don't be discouraged! Continue working on building your skills, projects, and gaining relevant experience. The right opportunity will come your way soon!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
